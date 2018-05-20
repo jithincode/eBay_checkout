@@ -1,0 +1,12 @@
+/target
+.settings
+.classpath
+.DS_Store
+.project
+/output/*
+/report*
+.metadata/*
+.metadata
+BuildDetails.properties
+/src/test/java/com/sc/rtob/baserunner/DesktopChromeTest.java
+
