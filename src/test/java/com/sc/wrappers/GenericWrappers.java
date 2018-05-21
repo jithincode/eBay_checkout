@@ -63,6 +63,9 @@ public class GenericWrappers {
 		if ((webDriver == null) || (webDriver != null & !(isAppiumDriver()))) {
 			try {
 				DesiredCapabilities cap = new DesiredCapabilities();
+				 File appDir = new File(System.getProperty("user.dir"));
+				  File app = new File(appDir,properties("AppPath"));  
+				  
 				if (properties("Isrealdevice").equalsIgnoreCase("Yes")) {
 					cap.setCapability("device","Android");
 					//mandatory capabilities
@@ -72,7 +75,7 @@ public class GenericWrappers {
 					cap.setCapability("automationName","Ebay Product Checkout");
 					cap.setCapability("appPackage", properties("Bundleid"));
 					cap.setCapability("appActivity", properties("AppActivity"));
-					
+					cap.setCapability("app", app.getAbsolutePath());
 				} 
 				cap.setCapability("noReset", true);
 				log.debug(cap);
